@@ -13,7 +13,7 @@ public class ResourceManager : MonoBehaviour
     void Start()
     {
         meepleManager = gameObject.GetComponent<MeepleManager>();
-        resourceText.text = resources.ToString();
+        resourceText.text = ((int)resources).ToString();
         StartCoroutine(ResourceProduction());
     }
 

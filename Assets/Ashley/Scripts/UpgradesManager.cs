@@ -1,27 +1,34 @@
 using NUnit.Framework;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class UpgradesManager : MonoBehaviour
 {
     [Header("Followers")]
+    [SerializeField] TMP_Text followerPriceTMP;
     [SerializeField] int followerNumPurchased;
     [SerializeField] float followerCostBase, followerCostMultiplier;
 
     [Header("Priests")]
+    [SerializeField] TMP_Text priestPriceTMP;
     [SerializeField] int priestNum;
     [SerializeField] float priestCostBase, priestCostMultiplier, followerIntervalDecreasePerPriestBase, followerIntervalDecreasePerPriestMultiplier;
 
     [Header("Farms")]
+    [SerializeField] TMP_Text farmPriceTMP;
     [SerializeField] int farmNum;
     [SerializeField] float farmCostBase, farmCostMultiplier, resourceIncreasePerFarmBase, resourceIncreasePerFarmMultiplier;
 
     [Header("Churches")]
+    [SerializeField] TMP_Text churchPriceTMP;
     [SerializeField] int churchNum;
     [SerializeField] float churchCostBase, churchCostMultiplier, followerIncreasePerChurchBase, followerIncreasePerChurchMultiplier;
 
     [Header("Statues")]
+    [SerializeField] TMP_Text statuePriceTMP;
     [SerializeField] int statueNum;
     [SerializeField] float statueCostBase, statueCostMultiplier, followerIncreasePerStatueBase, followerIncreasePerStatueMultiplier,
         resourceIncrementPerFollowerBase, resourceIncrementPerFollowerMultiplier, 
@@ -35,57 +42,62 @@ public class UpgradesManager : MonoBehaviour
     {
         meepleManager = gameObject.GetComponent<MeepleManager>();
         resourceManager = gameObject.GetComponent<ResourceManager>();
+        UpdatePrice(followerPriceTMP, followerNumPurchased, followerCostBase, followerCostMultiplier);
+        UpdatePrice(priestPriceTMP, priestNum, priestCostBase, priestCostMultiplier);
+        UpdatePrice(farmPriceTMP, farmNum, farmCostBase, farmCostMultiplier);
+        UpdatePrice(churchPriceTMP, churchNum, churchCostBase, churchCostMultiplier);
+        UpdatePrice(statuePriceTMP, statueNum, statueCostBase, statueCostMultiplier);
     }
 
-    public float GetPurchaseCost(int numPurchased, float costBase, float costMultiplier)
+    public int GetPurchaseCost(int numPurchased, float costBase, float costMultiplier)
     {
-        return (costBase * Mathf.Pow(costMultiplier, numPurchased));
+        return (int)(costBase * Mathf.Pow(costMultiplier, numPurchased));
+    }
+    public void UpdatePrice(TMP_Text price, int numPurchased, float costBase, float costMultiplier)
+    {
+        price.text = GetPurchaseCost(numPurchased, costBase, costMultiplier).ToString();
     }
 
-    public bool TryPurchaseFollower()
+    public void TryPurchaseFollower()
     {
         if(resourceManager.TrySpendResources(GetPurchaseCost(followerNumPurchased, followerCostBase, followerCostMultiplier)))
         {
             meepleManager.AddFollowers(false);
             followerNumPurchased++;
-            return true;
+            UpdatePrice(followerPriceTMP, followerNumPurchased, followerCostBase, followerCostMultiplier);
         }
-        return false;
     }
-    public bool TryPurchasePriest()
+    public void TryPurchasePriest()
     {
         if (resourceManager.TrySpendResources(GetPurchaseCost(priestNum, priestCostBase, priestCostMultiplier)))
         {
             float timeForFollowerConversionDecrease = followerIntervalDecreasePerPriestBase * Mathf.Pow(followerIntervalDecreasePerPriestMultiplier, priestNum);
-            resourceManager.AddResourceIncrementFromFarms(timeForFollowerConversionDecrease);
+            meepleManager.AddTimeForFollowerConversionDecreaseFromPriests(timeForFollowerConversionDecrease);
             priestNum++;
-            return true;
+            UpdatePrice(priestPriceTMP, priestNum, priestCostBase, priestCostMultiplier);
         }
-        return false;
     }
-    public bool TryPurchaseFarm()
+    public void TryPurchaseFarm()
     {
         if (resourceManager.TrySpendResources(GetPurchaseCost(farmNum, farmCostBase, farmCostMultiplier)))
         {
             float resourceIncrement = resourceIncreasePerFarmBase * Mathf.Pow(resourceIncreasePerFarmMultiplier, farmNum);
             resourceManager.AddResourceIncrementFromFarms(resourceIncrement);
             farmNum++;
-            return true;
+            UpdatePrice(farmPriceTMP, farmNum, farmCostBase, farmCostMultiplier);
         }
-        return false;
     }
-    public bool TryPurchaseChurch()
+    public void TryPurchaseChurch()
     {
         if (resourceManager.TrySpendResources(GetPurchaseCost(churchNum, churchCostBase, churchCostMultiplier)))
         {
             int followerIncrease = (int)(followerIncreasePerChurchBase * Mathf.Pow(followerIncreasePerChurchMultiplier, churchNum));
             meepleManager.AddFollowers(false, followerIncrease);
             churchNum++;
-            return true;
+            UpdatePrice(churchPriceTMP, churchNum, churchCostBase, churchCostMultiplier);
         }
-        return false;
     }
-    public bool TryPurchaseStatue()
+    public void TryPurchaseStatue()
     {
         if (resourceManager.TrySpendResources(GetPurchaseCost(statueNum, statueCostBase, statueCostMultiplier)))
         {
@@ -94,11 +106,10 @@ public class UpgradesManager : MonoBehaviour
             float resourceIncrement = resourceIncrementPerFollowerBase * Mathf.Pow(resourceIncrementPerFollowerMultiplier, statueNum);
             resourceManager.AddResourceIncrementPerFollowerFromStatues(resourceIncrement);
             float timeForResourceProductionDecrease = timeForResourceProductionDecreaseBase * Mathf.Pow(timeForResourceProductionDecreaseMultiplier, statueNum);
-            resourceManager.AddResourceIncrementPerFollowerFromStatues(resourceIncrement);
+            resourceManager.AddTimeForResourceProductionDecreaseFromStatues(resourceIncrement);
 
             statueNum++;
-            return true;
+            UpdatePrice(statuePriceTMP, statueNum, statueCostBase, statueCostMultiplier);
         }
-        return false;
     }
 }

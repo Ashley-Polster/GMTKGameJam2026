@@ -14,7 +14,7 @@ public class MeepleManager : MonoBehaviour
     [SerializeField] RectTransform resenterBar;
     [SerializeField] float resenterBarMaxWidth, resenterBarHeight;
     [Header("Conversion rates")]
-    [SerializeField] float timeForFollowerConversion, timeForResenterConversion;
+    [SerializeField] float timeForFollowerConversion, timeForResenterConversion, timeForFollowerConversionDecreaseFromPriests;
 
 
     void Start()
@@ -38,23 +38,23 @@ public class MeepleManager : MonoBehaviour
         return populationFollowers;
     }
 
-    public void AddFollowers(int num = 1, bool decreaseResenter = true)
+    public void AddFollowers(bool decreaseResenter = true, int num = 1)
     {
-        populationFollowers++;
+        populationFollowers += num;
         if (decreaseResenter)
         {
-            populationResenters--;
+            populationResenters -= num;
         }
         population = populationFollowers + populationResenters;
         SetResenterBar();
     }
-    public void AddResenters(int num = 1, bool decreaseFollower = true)
+    public void AddResenters(bool decreaseFollower = true, int num = 1)
     {
         if (decreaseFollower)
         {
-            populationFollowers--;
+            populationFollowers -= num;
         }
-        populationResenters++;
+        populationResenters += num;
         population = populationFollowers + populationResenters;
         SetResenterBar();
     }
@@ -64,12 +64,17 @@ public class MeepleManager : MonoBehaviour
         resenterBar.sizeDelta = new Vector2(width, resenterBarHeight);
     }
 
+    public void AddTimeForFollowerConversionDecreaseFromPriests(float timeForFollowerConversionDecrease)
+    {
+        timeForFollowerConversionDecreaseFromPriests += timeForFollowerConversionDecrease;
+    }
+
     public IEnumerator FollowerConversion()
     {
         float start = Time.time;
         while (true)
         {
-            if (Time.time > start + timeForFollowerConversion)
+            if (Time.time > start + timeForFollowerConversion - timeForFollowerConversionDecreaseFromPriests)
             {
                 AddFollowers();
                 start = Time.time;

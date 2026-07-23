@@ -6,11 +6,10 @@ public class ResourceManager : MonoBehaviour
 {
     [Header("Resources")]
     [SerializeField] TMP_Text resourceText;
-    [SerializeField] int resources, resourceIncrementPerFollower, resourceIncrementFromFarms;
-    [SerializeField] float timeForResourceProduction;
+    [SerializeField] float resources, resourceIncrementFromFarms, resourceIncrementPerFollower, resourceIncrementPerFollowerFromStatues, 
+        timeForResourceProduction, timeForResourceProductionDecreaseFromStatues;
     private MeepleManager meepleManager;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         meepleManager = gameObject.GetComponent<MeepleManager>();
@@ -18,18 +17,12 @@ public class ResourceManager : MonoBehaviour
         StartCoroutine(ResourceProduction());
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void AddResources(int newResources)
+    public void AddResources(float newResources)
     {
         resources += newResources;
         resourceText.text = resources.ToString();
     }
-    public bool TrySpendResources(int spendResources)
+    public bool TrySpendResources(float spendResources)
     {
         if (resources - spendResources >= 0)
         {
@@ -40,14 +33,27 @@ public class ResourceManager : MonoBehaviour
         return false;
     }
 
+    public void AddResourceIncrementFromFarms(float resourceIncrement)
+    {
+        resourceIncrementFromFarms += resourceIncrement;
+    }
+    public void AddResourceIncrementPerFollowerFromStatues(float resourceIncrementPerFollower)
+    {
+        resourceIncrementPerFollowerFromStatues += resourceIncrementPerFollower;
+    }
+    public void AddTimeForResourceProductionDecreaseFromStatues(float timeForResourceProductionDecrease)
+    {
+        timeForResourceProductionDecreaseFromStatues += timeForResourceProductionDecrease;
+    }
+
     public IEnumerator ResourceProduction()
     {
         float start = Time.time;
         while (true)
         {
-            if (Time.time > start + timeForResourceProduction)
+            if (Time.time > start + timeForResourceProduction - timeForResourceProductionDecreaseFromStatues)
             {
-                int newResources = resourceIncrementPerFollower * meepleManager.GetPopulationFollowers() + resourceIncrementFromFarms;
+                float newResources = (resourceIncrementPerFollower + resourceIncrementPerFollowerFromStatues) * (float)meepleManager.GetPopulationFollowers() + resourceIncrementFromFarms;
                 AddResources(newResources);
                 start = Time.time;
             }

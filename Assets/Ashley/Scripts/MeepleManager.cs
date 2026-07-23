@@ -12,6 +12,8 @@ public class MeepleManager : MonoBehaviour
     [Tooltip("Only read. Serialized for ease of checking values")][SerializeField] int populationResenters;
     [Header("Resenter bar")]
     [SerializeField] RectTransform resenterBar;
+    [SerializeField] GameObject handleBar;
+    [SerializeField] Sprite followerMajorityHandle, resenterMajorityHandle;
     [SerializeField] float resenterBarMaxWidth, resenterBarHeight;
     [Header("Conversion rates")]
     [SerializeField] float timeForFollowerConversion, timeForResenterConversion, timeForFollowerConversionDecreaseFromPriests;
@@ -62,6 +64,17 @@ public class MeepleManager : MonoBehaviour
     {
         float width = resenterBarMaxWidth * ((float)populationResenters / (float)population);
         resenterBar.sizeDelta = new Vector2(width, resenterBarHeight);
+        RectTransform handleBarRectTransform = handleBar.GetComponent<RectTransform>();
+        handleBarRectTransform.anchoredPosition = new Vector2(width, 0);
+        Image handleBarImage = handleBar.GetComponent<Image>();
+        if (populationFollowers >= populationResenters)
+        {
+            handleBarImage.sprite = followerMajorityHandle;
+        }
+        else
+        {
+            handleBarImage.sprite = resenterMajorityHandle;
+        }
     }
 
     public void AddTimeForFollowerConversionDecreaseFromPriests(float timeForFollowerConversionDecrease)

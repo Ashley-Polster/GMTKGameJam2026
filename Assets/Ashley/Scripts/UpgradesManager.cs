@@ -9,13 +9,13 @@ public class UpgradesManager : MonoBehaviour
     [SerializeField] int followerNumPurchased;
     [SerializeField] float followerCostBase, followerCostMultiplier;
 
-    [Header("Farms")]
-    [SerializeField] int farmNum;
-    [SerializeField] float farmCostBase, farmCostMultiplier, resourceIncreasePerFarmBase, resourceIncreasePerFarmMultiplier;
-
     [Header("Priests")]
     [SerializeField] int priestNum;
     [SerializeField] float priestCostBase, priestCostMultiplier, followerIntervalDecreasePerPriestBase, followerIntervalDecreasePerPriestMultiplier;
+
+    [Header("Farms")]
+    [SerializeField] int farmNum;
+    [SerializeField] float farmCostBase, farmCostMultiplier, resourceIncreasePerFarmBase, resourceIncreasePerFarmMultiplier;
 
     [Header("Churches")]
     [SerializeField] int churchNum;
@@ -52,19 +52,6 @@ public class UpgradesManager : MonoBehaviour
         }
         return false;
     }
-
-    public bool TryPurchaseFarm()
-    {
-        if (resourceManager.TrySpendResources(GetPurchaseCost(farmNum, farmCostBase, farmCostMultiplier)))
-        {
-            float resourceIncrement = resourceIncreasePerFarmBase * Mathf.Pow(resourceIncreasePerFarmMultiplier, farmNum);
-            resourceManager.AddResourceIncrementFromFarms(resourceIncrement);
-            farmNum++;
-            return true;
-        }
-        return false;
-    }
-
     public bool TryPurchasePriest()
     {
         if (resourceManager.TrySpendResources(GetPurchaseCost(priestNum, priestCostBase, priestCostMultiplier)))
@@ -72,6 +59,17 @@ public class UpgradesManager : MonoBehaviour
             float timeForFollowerConversionDecrease = followerIntervalDecreasePerPriestBase * Mathf.Pow(followerIntervalDecreasePerPriestMultiplier, priestNum);
             resourceManager.AddResourceIncrementFromFarms(timeForFollowerConversionDecrease);
             priestNum++;
+            return true;
+        }
+        return false;
+    }
+    public bool TryPurchaseFarm()
+    {
+        if (resourceManager.TrySpendResources(GetPurchaseCost(farmNum, farmCostBase, farmCostMultiplier)))
+        {
+            float resourceIncrement = resourceIncreasePerFarmBase * Mathf.Pow(resourceIncreasePerFarmMultiplier, farmNum);
+            resourceManager.AddResourceIncrementFromFarms(resourceIncrement);
+            farmNum++;
             return true;
         }
         return false;
@@ -103,5 +101,4 @@ public class UpgradesManager : MonoBehaviour
         }
         return false;
     }
-
 }

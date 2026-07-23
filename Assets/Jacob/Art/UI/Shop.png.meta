@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: 264e806bc4d05174eb7d1afdcd549749
+guid: f6cf7139f5e376247ab6f8a34d1aae68
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2825368474614944185
-    second: chruch_0
+      213: -1151905075149521417
+    second: Shop_0
+  - first:
+      213: 173225325691430865
+    second: Shop_1
+  - first:
+      213: 8832136723943634096
+    second: Shop_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +119,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: chruch_0
+      name: Shop_0
       rect:
         serializedVersion: 2
-        x: 5
-        y: 0
-        width: 70
-        height: 80
+        x: 0
+        y: 124
+        width: 80
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +134,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9b1d20188a9b53720800000000000000
-      internalID: 2825368474614944185
+      spriteID: 7fd3ebcef6c9300f0800000000000000
+      internalID: -1151905075149521417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shop_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 80
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d760f3148b676200800000000000000
+      internalID: 173225325691430865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shop_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 80
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b4b7564e8d029a70800000000000000
+      internalID: 8832136723943634096
       vertices: []
       indices: 
       edges: []
@@ -148,7 +198,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      chruch_0: 2825368474614944185
+      Shop_0: -1151905075149521417
+      Shop_1: 173225325691430865
+      Shop_2: 8832136723943634096
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

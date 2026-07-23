@@ -30,7 +30,7 @@ public class MeepleManager : MonoBehaviour
     void Update()
     {
         //may move to relavent functions once made
-        SetResenterBar();
+        //SetResenterBar();
     }
 
     public int GetPopulationFollowers()
@@ -76,6 +76,7 @@ public class MeepleManager : MonoBehaviour
         {
             if (Time.time > start + timeForFollowerConversion - timeForFollowerConversionDecreaseFromPriests)
             {
+                Debug.Log("Converting to follower");
                 AddFollowers();
                 start = Time.time;
             }
@@ -87,8 +88,9 @@ public class MeepleManager : MonoBehaviour
         float start = Time.time;
         while (true)
         {
-            if (Time.time > start + timeForFollowerConversion)
+            if (Time.time > start + timeForResenterConversion)
             {
+                Debug.Log("Converting to resenter");
                 AddResenters();
                 start = Time.time;
             }

@@ -52,8 +52,8 @@ MonoBehaviour:
   populationFollowers: 0
   populationResenters: 0
   resenterBar: {fileID: 0}
-  resenterBarMaxWidth: 730
-  resenterBarHeight: 15
+  resenterBarMaxWidth: 2400
+  resenterBarHeight: 40
   timeForFollowerConversion: 80
   timeForResenterConversion: 60
   timeForFollowerConversionDecreaseFromPriests: 0

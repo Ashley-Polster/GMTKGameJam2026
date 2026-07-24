@@ -1,43 +1,40 @@
 fileFormatVersion: 2
-guid: c39839c08eb7c4d49a0ecaf44cb49701
+guid: 56db0b6d067e97e46991a5c450498f4e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7683434278201788734
-    second: Meeples sheet_0
+      213: 7508347900224055981
+    second: TimerNumbers_0
   - first:
-      213: 6164398712158131254
-    second: Meeples sheet_1
+      213: 5552962717482790918
+    second: TimerNumbers_1
   - first:
-      213: -2082944417104577918
-    second: Meeples sheet_2
+      213: 1996196766357706053
+    second: TimerNumbers_2
   - first:
-      213: -1001601408417631078
-    second: Meeples sheet_3
+      213: -6568100234585280993
+    second: TimerNumbers_3
   - first:
-      213: 3432054701713127141
-    second: Meeples sheet_4
+      213: -567351932884371472
+    second: TimerNumbers_4
   - first:
-      213: -8257175217006726390
-    second: Meeples sheet_5
+      213: 1265128694284181217
+    second: TimerNumbers_5
   - first:
-      213: -5362375759397158415
-    second: Meeples sheet_6
+      213: -4643086789053627058
+    second: TimerNumbers_6
   - first:
-      213: 4501386221321310362
-    second: Meeples sheet_7
+      213: -5862467746615343841
+    second: TimerNumbers_7
   - first:
-      213: 7275669531656967199
-    second: Meeples sheet_8
+      213: -7586129293757381310
+    second: TimerNumbers_8
   - first:
-      213: -7295828583277384314
-    second: Meeples sheet_9
+      213: 2307121703996992980
+    second: TimerNumbers_9
   - first:
-      213: -7035251702707422326
-    second: Meeples sheet_10
-  - first:
-      213: 3782878339021182126
-    second: Meeples sheet_11
+      213: -7221149271955043745
+    second: TimerNumbers_10
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -146,199 +143,243 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Meeples sheet_0
+      name: TimerNumbers_0
       rect:
         serializedVersion: 2
-        x: 10
-        y: 640
-        width: 140
-        height: 130
+        x: 8
+        y: 55
+        width: 16
+        height: 19
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2c6f8b88b35fe5590800000000000000
-      internalID: -7683434278201788734
+      spriteID: daaa7e262a2033860800000000000000
+      internalID: 7508347900224055981
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Meeples sheet_1
+      name: TimerNumbers_1
       rect:
         serializedVersion: 2
-        x: 170
-        y: 640
-        width: 140
-        height: 130
+        x: 25
+        y: 55
+        width: 14
+        height: 20
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6349f04e7f75c8550800000000000000
-      internalID: 6164398712158131254
+      spriteID: 600bc82bb26101d40800000000000000
+      internalID: 5552962717482790918
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Meeples sheet_2
+      name: TimerNumbers_2
       rect:
         serializedVersion: 2
-        x: 330
-        y: 640
-        width: 140
-        height: 130
+        x: 40
+        y: 55
+        width: 15
+        height: 20
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 28a399ba615e713e0800000000000000
-      internalID: -2082944417104577918
+      spriteID: 545d888f16ae3bb10800000000000000
+      internalID: 1996196766357706053
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Meeples sheet_3
+      name: TimerNumbers_3
       rect:
         serializedVersion: 2
-        x: 10
-        y: 480
-        width: 140
-        height: 150
+        x: 56
+        y: 55
+        width: 16
+        height: 20
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a947cb463d89912f0800000000000000
-      internalID: -1001601408417631078
+      spriteID: f1e626cc2ab69d4a0800000000000000
+      internalID: -6568100234585280993
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Meeples sheet_4
+      name: TimerNumbers_4
       rect:
         serializedVersion: 2
-        x: 170
-        y: 480
-        width: 140
-        height: 150
+        x: 8
+        y: 32
+        width: 16
+        height: 19
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5e6f151419b11af20800000000000000
-      internalID: 3432054701713127141
+      spriteID: 0f7bbc94c6c5028f0800000000000000
+      internalID: -567351932884371472
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Meeples sheet_5
+      name: TimerNumbers_5
       rect:
         serializedVersion: 2
-        x: 330
-        y: 480
-        width: 140
-        height: 150
+        x: 25
+        y: 32
+        width: 15
+        height: 19
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a03b72673ee986d80800000000000000
-      internalID: -8257175217006726390
+      spriteID: 1ee56f138d3ae8110800000000000000
+      internalID: 1265128694284181217
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Meeples sheet_6
+      name: TimerNumbers_6
       rect:
         serializedVersion: 2
-        x: 320
-        y: 320
-        width: 150
-        height: 160
+        x: 41
+        y: 32
+        width: 14
+        height: 19
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1f187fc68a30595b0800000000000000
-      internalID: -5362375759397158415
+      spriteID: e45462d5a21709fb0800000000000000
+      internalID: -4643086789053627058
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Meeples sheet_8
+      name: TimerNumbers_7
       rect:
         serializedVersion: 2
-        x: 0
-        y: 320
-        width: 150
-        height: 160
+        x: 56
+        y: 32
+        width: 17
+        height: 19
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f14db8114ee58f460800000000000000
-      internalID: 7275669531656967199
+      spriteID: f15cec725a454aea0800000000000000
+      internalID: -5862467746615343841
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Meeples sheet_9
+      name: TimerNumbers_8
       rect:
         serializedVersion: 2
-        x: 160
-        y: 320
-        width: 150
-        height: 160
+        x: 9
+        y: 6
+        width: 15
+        height: 19
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 68d2c97fe8200ca90800000000000000
-      internalID: -7295828583277384314
+      spriteID: 2450861b997a8b690800000000000000
+      internalID: -7586129293757381310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TimerNumbers_9
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 6
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4dda55457fa840020800000000000000
+      internalID: 2307121703996992980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TimerNumbers_10
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 6
+        width: 12
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5a8c071ff259cb90800000000000000
+      internalID: -7221149271955043745
       vertices: []
       indices: 
       edges: []
@@ -347,7 +388,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 3af83a56bb485b043b3332c1a158dc94
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -355,22 +396,19 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":3.0,"y":3.0},"gridSpriteSize":{"x":158.0,"y":165.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      Meeples sheet_0: -7683434278201788734
-      Meeples sheet_1: 6164398712158131254
-      Meeples sheet_10: -7035251702707422326
-      Meeples sheet_11: 3782878339021182126
-      Meeples sheet_2: -2082944417104577918
-      Meeples sheet_3: -1001601408417631078
-      Meeples sheet_4: 3432054701713127141
-      Meeples sheet_5: -8257175217006726390
-      Meeples sheet_6: -5362375759397158415
-      Meeples sheet_7: 4501386221321310362
-      Meeples sheet_8: 7275669531656967199
-      Meeples sheet_9: -7295828583277384314
+      TimerNumbers_0: 7508347900224055981
+      TimerNumbers_1: 5552962717482790918
+      TimerNumbers_10: -7221149271955043745
+      TimerNumbers_2: 1996196766357706053
+      TimerNumbers_3: -6568100234585280993
+      TimerNumbers_4: -567351932884371472
+      TimerNumbers_5: 1265128694284181217
+      TimerNumbers_6: -4643086789053627058
+      TimerNumbers_7: -5862467746615343841
+      TimerNumbers_8: -7586129293757381310
+      TimerNumbers_9: 2307121703996992980
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

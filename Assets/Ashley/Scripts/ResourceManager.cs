@@ -1,58 +1,126 @@
 using System.Collections;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ResourceManager : MonoBehaviour
 {
     [Header("Resources")]
     [SerializeField] TMP_Text resourceText;
-    [SerializeField] int resources, resourceIncrementPerFollower, resourceIncrementFromFarms;
-    [SerializeField] float timeForResourceProduction;
-    private MeepleManager meepleManager;
+    [SerializeField] float resources, resourceIncrementFromFarms, resourceIncrementPerFollower, resourceIncrementPerFollowerFromStatues, 
+        timeForResourceProduction, timeForResourceProductionDecreaseFromStatues;
+    [Header("Progress bar")]
+    [SerializeField] RectTransform resourceBar;
+    [SerializeField] float resourceBarMaxWidth, resourceBarHeight;
+    [Header("Icon Progress Spin")]
+    [SerializeField] Image resourceIcon;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private MeepleManager meepleManager;
+    private float startTime, endTime;
+
     void Start()
     {
         meepleManager = gameObject.GetComponent<MeepleManager>();
-        resourceText.text = resources.ToString();
+        UpdateResourceTextUI();
         StartCoroutine(ResourceProduction());
     }
-
-    // Update is called once per frame
     void Update()
     {
-        
+        SetResourceProgressBar();
+        SetResourceProgressSpin();
     }
 
-    public void AddResources(int newResources)
+    public void AddResources(float newResources)
     {
         resources += newResources;
-        resourceText.text = resources.ToString();
+        UpdateResourceTextUI();
     }
-    public bool TrySpendResources(int spendResources)
+    public bool TrySpendResources(float spendResources)
     {
         if (resources - spendResources >= 0)
         {
             resources -= spendResources;
-            resourceText.text = resources.ToString();
+            UpdateResourceTextUI();
             return true;
         }
         return false;
     }
+    public void UpdateResourceTextUI()
+    {
+        resourceText.text = ((int)resources).ToString();
+    }
+
+    public void AddResourceIncrementFromFarms(float resourceIncrement)
+    {
+        resourceIncrementFromFarms += resourceIncrement;
+    }
+    public void AddResourceIncrementPerFollowerFromStatues(float resourceIncrementPerFollower)
+    {
+        resourceIncrementPerFollowerFromStatues += resourceIncrementPerFollower;
+    }
+    public void AddTimeForResourceProductionDecreaseFromStatues(float timeForResourceProductionDecrease)
+    {
+        timeForResourceProductionDecreaseFromStatues += timeForResourceProductionDecrease;
+    }
+
+    public void SetResourceProgressBar()
+    {
+        float width = resourceBarMaxWidth * (Time.time - startTime) / (endTime - startTime);
+        resourceBar.sizeDelta = new Vector2(width, resourceBarHeight);
+    }
+    public void SetResourceProgressSpin()
+    {
+        float percent = (Time.time - startTime) / (endTime - startTime);
+        resourceIcon.fillAmount = percent;
+    }
+
+    private void SetStartTime()
+    {
+        startTime = Time.time;
+    }
+    private void SetEndTime()
+    {
+        endTime = startTime + timeForResourceProduction - timeForResourceProductionDecreaseFromStatues;
+    }
 
     public IEnumerator ResourceProduction()
     {
-        float start = Time.time;
+        SetStartTime();
+        SetEndTime();
         while (true)
         {
-            if (Time.time > start + timeForResourceProduction)
+            SetEndTime();
+            if (Time.time > endTime)
             {
-                int newResources = resourceIncrementPerFollower * meepleManager.GetPopulationFollowers() + resourceIncrementFromFarms;
+                float newResources = (resourceIncrementPerFollower + resourceIncrementPerFollowerFromStatues) * (float)meepleManager.GetPopulationFollowers() + resourceIncrementFromFarms;
                 AddResources(newResources);
-                start = Time.time;
+                SetStartTime();
+                SetEndTime();
             }
-            yield return new WaitForSeconds(1);
+            if(endTime - Time.time >= 1)
+            {
+                yield return new WaitForSeconds(1);
+            }
+            else
+            {
+                yield return new WaitForSeconds(endTime - Time.time);
+            }
         }
     }
 
+    //public IEnumerator ResourceProduction()
+    //{
+    //    float start = Time.time;
+    //    while (true)
+    //    {
+    //        if (Time.time > start + timeForResourceProduction - timeForResourceProductionDecreaseFromStatues)
+    //        {
+    //            float newResources = (resourceIncrementPerFollower + resourceIncrementPerFollowerFromStatues) * (float)meepleManager.GetPopulationFollowers() + resourceIncrementFromFarms;
+    //            AddResources(newResources);
+    //            start = Time.time;
+    //        }
+    //        yield return new WaitForSeconds(1);
+    //    }
+    //}
 }

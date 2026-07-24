@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6181602578144967079}
   - component: {fileID: 6299905288008410173}
+  - component: {fileID: 3616425401091285920}
+  - component: {fileID: 7110997135661731727}
   m_Layer: 0
   m_Name: Player manager
   m_TagString: Untagged
@@ -50,5 +52,78 @@ MonoBehaviour:
   populationFollowers: 0
   populationResenters: 0
   resenterBar: {fileID: 0}
-  resenterBarMaxWidth: 730
-  resenterBarHeight: 15
+  handleBar: {fileID: 0}
+  followerMajorityHandle: {fileID: -7609172880692965287, guid: ad72e7addc5608b4bb1cf43b20bcf54f, type: 3}
+  resenterMajorityHandle: {fileID: 5554984007185707011, guid: ad72e7addc5608b4bb1cf43b20bcf54f, type: 3}
+  resenterBarMaxWidth: 2400
+  resenterBarHeight: 40
+  timeForFollowerConversion: 80
+  timeForResenterConversion: 50
+  timeForFollowerConversionDecreaseFromPriests: 0
+--- !u!114 &3616425401091285920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 948517812272909343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 243284a6648634f4a90c38492ab4f922, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ResourceManager
+  resourceText: {fileID: 0}
+  resources: 100
+  resourceIncrementFromFarms: 0
+  resourceIncrementPerFollower: 1
+  resourceIncrementPerFollowerFromStatues: 0
+  timeForResourceProduction: 10
+  timeForResourceProductionDecreaseFromStatues: 0
+  resourceBar: {fileID: 0}
+  resourceBarMaxWidth: 165
+  resourceBarHeight: 5
+  resourceIcon: {fileID: 0}
+--- !u!114 &7110997135661731727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 948517812272909343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 632cf292004e3974e86019daf3853ec1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UpgradesManager
+  followerPriceTMP: {fileID: 0}
+  followerNumPurchased: 0
+  followerCostBase: 10
+  followerCostMultiplier: 1.1
+  priestPriceTMP: {fileID: 0}
+  priestNum: 0
+  priestCostBase: 20
+  priestCostMultiplier: 1.15
+  followerIntervalDecreasePerPriestBase: 1
+  followerIntervalDecreasePerPriestMultiplier: 1.1
+  farmPriceTMP: {fileID: 0}
+  farmNum: 0
+  farmCostBase: 50
+  farmCostMultiplier: 1.3
+  resourceIncreasePerFarmBase: 5
+  resourceIncreasePerFarmMultiplier: 1.1
+  churchPriceTMP: {fileID: 0}
+  churchNum: 0
+  churchCostBase: 100
+  churchCostMultiplier: 1.5
+  followerIncreasePerChurchBase: 5
+  followerIncreasePerChurchMultiplier: 1.1
+  statuePriceTMP: {fileID: 0}
+  statueNum: 0
+  statueCostBase: 200
+  statueCostMultiplier: 10
+  followerIncreasePerStatueBase: 30
+  followerIncreasePerStatueMultiplier: 1.1
+  resourceIncrementPerFollowerBase: 1
+  resourceIncrementPerFollowerMultiplier: 2
+  timeForResourceProductionDecreaseBase: 0.5
+  timeForResourceProductionDecreaseMultiplier: 1.1

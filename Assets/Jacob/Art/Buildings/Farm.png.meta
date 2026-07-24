@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 264e806bc4d05174eb7d1afdcd549749
+guid: ce425dbdc3a52dd4591394f38f62d7f8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2825368474614944185
-    second: chruch_0
+      213: -4057977143843180069
+    second: Farm_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: chruch_0
+      name: Farm_0
       rect:
         serializedVersion: 2
-        x: 5
-        y: 0
-        width: 70
-        height: 80
+        x: 129
+        y: 479
+        width: 562
+        height: 222
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9b1d20188a9b53720800000000000000
-      internalID: 2825368474614944185
+      spriteID: bd1b29aa94b2fa7c0800000000000000
+      internalID: -4057977143843180069
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      chruch_0: 2825368474614944185
+      Farm_0: -4057977143843180069
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

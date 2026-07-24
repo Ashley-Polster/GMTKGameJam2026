@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4927485847959573104}
   - component: {fileID: 5399099306584252618}
   m_Layer: 5
-  m_Name: Follower bar
+  m_Name: Follower bar (defunct)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

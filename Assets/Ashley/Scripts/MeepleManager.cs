@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
 
 public class MeepleManager : MonoBehaviour
@@ -87,13 +88,21 @@ public class MeepleManager : MonoBehaviour
         float start = Time.time;
         while (true)
         {
-            if (Time.time > start + timeForFollowerConversion - timeForFollowerConversionDecreaseFromPriests)
+            float endTime = start + timeForFollowerConversion - timeForFollowerConversionDecreaseFromPriests;
+            if (Time.time >= endTime)
             {
                 Debug.Log("Converting to follower");
                 AddFollowers();
                 start = Time.time;
             }
-            yield return new WaitForSeconds(1);
+            if (endTime - Time.time >= 1)
+            {
+                yield return new WaitForSeconds(1);
+            }
+            else
+            {
+                yield return new WaitForSeconds(endTime - Time.time);
+            }
         }
     }
     public IEnumerator ResenterConversion()
@@ -101,13 +110,21 @@ public class MeepleManager : MonoBehaviour
         float start = Time.time;
         while (true)
         {
-            if (Time.time > start + timeForResenterConversion)
+            float endTime = start + timeForResenterConversion;
+            if (Time.time >= endTime)
             {
                 Debug.Log("Converting to resenter");
                 AddResenters();
                 start = Time.time;
             }
-            yield return new WaitForSeconds(1);
+            if (endTime - Time.time >= 1)
+            {
+                yield return new WaitForSeconds(1);
+            }
+            else
+            {
+                yield return new WaitForSeconds(endTime - Time.time);
+            }
         }
     }
 }

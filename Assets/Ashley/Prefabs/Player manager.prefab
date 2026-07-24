@@ -58,7 +58,7 @@ MonoBehaviour:
   resenterBarMaxWidth: 2400
   resenterBarHeight: 40
   timeForFollowerConversion: 80
-  timeForResenterConversion: 60
+  timeForResenterConversion: 50
   timeForFollowerConversionDecreaseFromPriests: 0
 --- !u!114 &3616425401091285920
 MonoBehaviour:
@@ -79,6 +79,10 @@ MonoBehaviour:
   resourceIncrementPerFollowerFromStatues: 0
   timeForResourceProduction: 10
   timeForResourceProductionDecreaseFromStatues: 0
+  resourceBar: {fileID: 0}
+  resourceBarMaxWidth: 165
+  resourceBarHeight: 5
+  resourceIcon: {fileID: 0}
 --- !u!114 &7110997135661731727
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,15 +115,15 @@ MonoBehaviour:
   churchNum: 0
   churchCostBase: 100
   churchCostMultiplier: 1.5
-  followerIncreasePerChurchBase: 10
+  followerIncreasePerChurchBase: 5
   followerIncreasePerChurchMultiplier: 1.1
   statuePriceTMP: {fileID: 0}
   statueNum: 0
   statueCostBase: 200
-  statueCostMultiplier: 2
+  statueCostMultiplier: 10
   followerIncreasePerStatueBase: 30
   followerIncreasePerStatueMultiplier: 1.1
-  resourceIncrementPerFollowerBase: 5
+  resourceIncrementPerFollowerBase: 1
   resourceIncrementPerFollowerMultiplier: 2
-  timeForResourceProductionDecreaseBase: 5
-  timeForResourceProductionDecreaseMultiplier: 2
+  timeForResourceProductionDecreaseBase: 0.5
+  timeForResourceProductionDecreaseMultiplier: 1.1

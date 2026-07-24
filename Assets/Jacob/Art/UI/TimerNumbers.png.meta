@@ -82,7 +82,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 32
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteBorder: {x: 9, y: 7, z: 8, w: 6}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -146,12 +146,12 @@ TextureImporter:
       name: TimerNumbers_0
       rect:
         serializedVersion: 2
-        x: 8
-        y: 55
-        width: 16
-        height: 19
+        x: 1
+        y: 50
+        width: 14
+        height: 17
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -168,12 +168,12 @@ TextureImporter:
       name: TimerNumbers_1
       rect:
         serializedVersion: 2
-        x: 25
-        y: 55
-        width: 14
-        height: 20
+        x: 18
+        y: 50
+        width: 12
+        height: 18
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -190,12 +190,12 @@ TextureImporter:
       name: TimerNumbers_2
       rect:
         serializedVersion: 2
-        x: 40
-        y: 55
-        width: 15
-        height: 20
+        x: 33
+        y: 50
+        width: 13
+        height: 18
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -212,12 +212,12 @@ TextureImporter:
       name: TimerNumbers_3
       rect:
         serializedVersion: 2
-        x: 56
-        y: 55
-        width: 16
-        height: 20
+        x: 49
+        y: 50
+        width: 14
+        height: 18
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -234,12 +234,12 @@ TextureImporter:
       name: TimerNumbers_4
       rect:
         serializedVersion: 2
-        x: 8
-        y: 32
-        width: 16
-        height: 19
+        x: 1
+        y: 27
+        width: 14
+        height: 17
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -256,12 +256,12 @@ TextureImporter:
       name: TimerNumbers_5
       rect:
         serializedVersion: 2
-        x: 25
-        y: 32
-        width: 15
-        height: 19
+        x: 18
+        y: 27
+        width: 13
+        height: 17
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -278,12 +278,12 @@ TextureImporter:
       name: TimerNumbers_6
       rect:
         serializedVersion: 2
-        x: 41
-        y: 32
-        width: 14
-        height: 19
+        x: 34
+        y: 27
+        width: 12
+        height: 17
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -300,12 +300,12 @@ TextureImporter:
       name: TimerNumbers_7
       rect:
         serializedVersion: 2
-        x: 56
-        y: 32
-        width: 17
-        height: 19
+        x: 49
+        y: 27
+        width: 15
+        height: 17
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -322,12 +322,12 @@ TextureImporter:
       name: TimerNumbers_8
       rect:
         serializedVersion: 2
-        x: 9
-        y: 6
-        width: 15
-        height: 19
+        x: 2
+        y: 1
+        width: 13
+        height: 17
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -344,12 +344,12 @@ TextureImporter:
       name: TimerNumbers_9
       rect:
         serializedVersion: 2
-        x: 25
-        y: 6
-        width: 14
-        height: 19
+        x: 18
+        y: 1
+        width: 12
+        height: 17
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -366,12 +366,12 @@ TextureImporter:
       name: TimerNumbers_10
       rect:
         serializedVersion: 2
-        x: 42
-        y: 6
-        width: 12
-        height: 19
+        x: 35
+        y: 1
+        width: 10
+        height: 17
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -388,15 +388,17 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
-    internalID: 0
+    spriteID: 9051aaf8f7d464a4a83b968f3376e907
+    internalID: -374988837
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       TimerNumbers_0: 7508347900224055981
       TimerNumbers_1: 5552962717482790918

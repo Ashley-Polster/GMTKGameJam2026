@@ -10,8 +10,14 @@ public class IntroFade : MonoBehaviour
     private int textIndex;
     private int maxIndex;
 
+    [SerializeField] private AudioClip clip;
+    private AudioSource source;
+
     private void Start()
     {
+        source = GetComponent<AudioSource>();
+        source.pitch = 1.0f;
+
         foreach (var t in textToUse)
         {
             t.gameObject.SetActive(false);
@@ -37,6 +43,10 @@ public class IntroFade : MonoBehaviour
                 extraText.gameObject.SetActive(true);
             }
             yield return new WaitForSeconds(3f);
+            if (textIndex == maxIndex)
+            {
+                yield return new WaitForSeconds(3f);
+            }
             yield return FadeOutText(1f, text);
             if (textIndex == 2)
             {
@@ -44,6 +54,14 @@ public class IntroFade : MonoBehaviour
             }
 
             textIndex++;
+            if (textIndex < maxIndex)
+            {
+                source.pitch = source.pitch + .5f;
+            }
+            else
+            {
+                source.enabled = false;
+            }
         }
 
         SceneManager.LoadScene(2);
@@ -51,6 +69,8 @@ public class IntroFade : MonoBehaviour
 
     private IEnumerator FadeInText(float timeSpeed, TextMeshProUGUI text)
     {
+        source.PlayOneShot(clip);
+
         text.color = new Color(text.color.r, text.color.g, text.color.b, 0);
         while (text.color.a < 1.0f)
         {

@@ -18,14 +18,16 @@ public class MeepleManager : MonoBehaviour
     [SerializeField] float resenterBarMaxWidth, resenterBarHeight;
     [Header("Conversion rates")]
     [SerializeField] float timeForFollowerConversion, timeForResenterConversion, timeForFollowerConversionDecreaseFromPriests;
-
+    private PointManager pointManager;
 
     void Start()
     {
+        pointManager = gameObject.GetComponent<PointManager>();
         population = startingPopulation;
         populationFollowers = startingFollowers;
         populationResenters = startingPopulation - startingFollowers;
         SetResenterBar();
+        pointManager.UpdatePointInfo();
         StartCoroutine(FollowerConversion());
         StartCoroutine(ResenterConversion());
     }
@@ -40,6 +42,10 @@ public class MeepleManager : MonoBehaviour
     {
         return populationFollowers;
     }
+    public int GetPopulation()
+    {
+        return population;
+    }
 
     public void AddFollowers(bool decreaseResenter = true, int num = 1)
     {
@@ -50,6 +56,7 @@ public class MeepleManager : MonoBehaviour
         }
         population = populationFollowers + populationResenters;
         SetResenterBar();
+        pointManager.UpdatePointInfo();
     }
     public void AddResenters(bool decreaseFollower = true, int num = 1)
     {
@@ -60,6 +67,7 @@ public class MeepleManager : MonoBehaviour
         populationResenters += num;
         population = populationFollowers + populationResenters;
         SetResenterBar();
+        pointManager.UpdatePointInfo();
     }
     public void SetResenterBar()
     {

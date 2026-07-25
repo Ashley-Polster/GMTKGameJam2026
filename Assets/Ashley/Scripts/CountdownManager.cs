@@ -21,7 +21,7 @@ public class CountdownManager : MonoBehaviour
         TimeSpan timeLeft = TimeSpan.FromSeconds(endTime - Time.time);
         string timeLeftString = timeLeft.ToString();
         string timeLeftDebug = timeLeftString[3].ToString() + timeLeftString[4] + "   " + timeLeftString[6] + timeLeftString[7];
-        Debug.Log(timeLeftDebug);
+        //Debug.Log(timeLeftDebug);
         string timeMinutes = timeLeft.Minutes.ToString();
         string timeSeconds = timeLeft.Seconds.ToString();
         string timerString = "";

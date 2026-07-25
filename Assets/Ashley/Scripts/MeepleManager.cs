@@ -20,14 +20,13 @@ public class MeepleManager : MonoBehaviour
     [SerializeField] float timeForFollowerConversion, timeForResenterConversion, timeForFollowerConversionDecreaseFromPriests;
     private PointManager pointManager;
 
-    void Start()
+    void Awake()
     {
         pointManager = gameObject.GetComponent<PointManager>();
         population = startingPopulation;
         populationFollowers = startingFollowers;
         populationResenters = startingPopulation - startingFollowers;
         SetResenterBar();
-        pointManager.UpdatePointInfo();
         StartCoroutine(FollowerConversion());
         StartCoroutine(ResenterConversion());
     }

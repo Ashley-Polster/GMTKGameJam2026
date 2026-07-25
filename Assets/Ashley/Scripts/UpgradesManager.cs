@@ -38,13 +38,14 @@ public class UpgradesManager : MonoBehaviour
     private MeepleManager meepleManager;
     private ResourceManager resourceManager;
     private PointManager pointManager;
-    [SerializeField] SoundManager soundManager;
+    private SoundManager soundManager;
 
     void Start()
     {
         meepleManager = gameObject.GetComponent<MeepleManager>();
         resourceManager = gameObject.GetComponent<ResourceManager>();
         pointManager = gameObject.GetComponent<PointManager>();
+        soundManager = gameObject.GetComponent<SoundManager>();
         UpdatePrice(followerPriceTMP, followerNumPurchased, followerCostBase, followerCostMultiplier);
         UpdatePrice(priestPriceTMP, priestNum, priestCostBase, priestCostMultiplier);
         UpdatePrice(farmPriceTMP, farmNum, farmCostBase, farmCostMultiplier);

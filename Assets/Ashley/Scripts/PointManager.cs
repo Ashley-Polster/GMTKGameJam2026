@@ -29,9 +29,10 @@ public class PointManager : MonoBehaviour
 
         percentageStringBase = percentageText.text;
         calcStringBase = calcText.text;
+        UpdatePointInfo();
     }
 
-public void UpdatePoints()
+    public void UpdatePoints()
     {
         int followerNum = meepleMangager.GetPopulationFollowers();
         pointsFromFollowers = pointsPerFollower * followerNum;

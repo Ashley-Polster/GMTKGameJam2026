@@ -38,7 +38,6 @@ public class UpgradesManager : MonoBehaviour
     private MeepleManager meepleManager;
     private ResourceManager resourceManager;
     private PointManager pointManager;
-    [SerializeField] SoundManager soundManager;
 
     void Start()
     {
@@ -73,7 +72,6 @@ public class UpgradesManager : MonoBehaviour
             meepleManager.AddFollowers(false);
             followerNumPurchased++;
             UpdatePrice(followerPriceTMP, followerNumPurchased, followerCostBase, followerCostMultiplier);
-            soundManager.playSound();
         }
     }
     public void TryPurchasePriest()
@@ -84,7 +82,6 @@ public class UpgradesManager : MonoBehaviour
             meepleManager.AddTimeForFollowerConversionDecreaseFromPriests(timeForFollowerConversionDecrease);
             priestNum++;
             UpdatePrice(priestPriceTMP, priestNum, priestCostBase, priestCostMultiplier);
-            soundManager.playSound();
         }
     }
     public void TryPurchaseFarm()
@@ -95,7 +92,6 @@ public class UpgradesManager : MonoBehaviour
             resourceManager.AddResourceIncrementFromFarms(resourceIncrement);
             farmNum++;
             UpdatePrice(farmPriceTMP, farmNum, farmCostBase, farmCostMultiplier);
-            soundManager.playSound();
         }
     }
     public void TryPurchaseChurch()
@@ -106,7 +102,6 @@ public class UpgradesManager : MonoBehaviour
             meepleManager.AddFollowers(false, followerIncrease);
             churchNum++;
             UpdatePrice(churchPriceTMP, churchNum, churchCostBase, churchCostMultiplier);
-            soundManager.playSound();
         }
     }
     public void TryPurchaseStatue()
@@ -123,7 +118,6 @@ public class UpgradesManager : MonoBehaviour
             statueNum++;
             UpdatePrice(statuePriceTMP, statueNum, statueCostBase, statueCostMultiplier);
             pointManager.UpdatePointInfo();
-            soundManager.playSound();
         }
     }
 }

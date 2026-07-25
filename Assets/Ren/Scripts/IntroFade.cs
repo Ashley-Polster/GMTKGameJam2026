@@ -63,7 +63,8 @@ public class IntroFade : MonoBehaviour
                 source.enabled = false;
             }
         }
-
+        //let audio fully fade out then load the next scene
+        yield return new WaitForSeconds(2f);
         SceneManager.LoadScene(2);
     }
 

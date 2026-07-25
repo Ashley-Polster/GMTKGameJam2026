@@ -27,7 +27,7 @@ public class ResourceManager : MonoBehaviour
     }
     void Update()
     {
-        SetResourceProgressBar();
+        //SetResourceProgressBar();
         SetResourceProgressSpin();
     }
 

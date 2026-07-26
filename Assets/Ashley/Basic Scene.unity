@@ -893,11 +893,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &847659078 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3529690596826700525, guid: 4cb52229f4e40574b9f30471180f3276, type: 3}
+  m_PrefabInstance: {fileID: 550505651}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!224 &1011559792 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 9180811200198113478, guid: b1a5d504ad310784290d1891f66a1c9f, type: 3}
   m_PrefabInstance: {fileID: 6890782733121799816}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1034286604 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7872650332899700464, guid: 4cb52229f4e40574b9f30471180f3276, type: 3}
+  m_PrefabInstance: {fileID: 550505651}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1 &1118873984
 GameObject:
   m_ObjectHideFlags: 0
@@ -973,6 +995,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1118873984}
   m_CullTransparentMesh: 1
+--- !u!114 &1193979284 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1076293183911342427, guid: 4cb52229f4e40574b9f30471180f3276, type: 3}
+  m_PrefabInstance: {fileID: 550505651}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!114 &1242118595 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2950273394434131935, guid: 4cb52229f4e40574b9f30471180f3276, type: 3}
+  m_PrefabInstance: {fileID: 550505651}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!114 &1297781913 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2959357974365117821, guid: 82f2a773e02c509409c2a28352eea2d7, type: 3}
@@ -988,6 +1032,17 @@ MonoBehaviour:
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 955189434777676779, guid: 82f2a773e02c509409c2a28352eea2d7, type: 3}
   m_PrefabInstance: {fileID: 6279118730417896587}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!114 &1587690835 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7610802318896597320, guid: 4cb52229f4e40574b9f30471180f3276, type: 3}
+  m_PrefabInstance: {fileID: 550505651}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
@@ -1190,6 +1245,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 819966487195762120, guid: cd4daf380f47feb468526344e6b17d45, type: 3}
+      propertyPath: calcText
+      value: 
+      objectReference: {fileID: 847659078}
+    - target: {fileID: 819966487195762120, guid: cd4daf380f47feb468526344e6b17d45, type: 3}
+      propertyPath: pointsText
+      value: 
+      objectReference: {fileID: 1242118595}
+    - target: {fileID: 819966487195762120, guid: cd4daf380f47feb468526344e6b17d45, type: 3}
+      propertyPath: statueText
+      value: 
+      objectReference: {fileID: 1587690835}
+    - target: {fileID: 819966487195762120, guid: cd4daf380f47feb468526344e6b17d45, type: 3}
+      propertyPath: followerText
+      value: 
+      objectReference: {fileID: 1193979284}
+    - target: {fileID: 819966487195762120, guid: cd4daf380f47feb468526344e6b17d45, type: 3}
+      propertyPath: percentageText
+      value: 
+      objectReference: {fileID: 1034286604}
     - target: {fileID: 948517812272909343, guid: cd4daf380f47feb468526344e6b17d45, type: 3}
       propertyPath: m_Name
       value: Player manager

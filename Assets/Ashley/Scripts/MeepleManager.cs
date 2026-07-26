@@ -19,15 +19,19 @@ public class MeepleManager : MonoBehaviour
     [SerializeField] float resenterBarMaxWidth, resenterBarHeight;
     [Header("Conversion rates")]
     [SerializeField] float timeForFollowerConversion, timeForResenterConversion, timeForFollowerConversionDecreaseFromPriests;
-    private PointManager pointManager;
     [SerializeField] List<MeepleScript> meepleList = new List<MeepleScript>();
     [SerializeField] GameObject meeplePrefab;
     [SerializeField] GameObject priestPrefab;
     [SerializeField] Transform meepleSpawnPoint;
+    private CountdownManager countdownManager;
+    private PointManager pointManager;
+    private ApocalypseSequence apocalypseSequence;
 
     void Awake()
     {
-        pointManager = gameObject.GetComponent<PointManager>();
+        countdownManager = GetComponent<CountdownManager>();
+        pointManager = GetComponent<PointManager>();
+        apocalypseSequence = GetComponent<ApocalypseSequence>();
         population = startingPopulation;
         populationFollowers = startingFollowers;
         populationResenters = startingPopulation - startingFollowers;
@@ -42,12 +46,6 @@ public class MeepleManager : MonoBehaviour
         SetResenterBar();
         StartCoroutine(FollowerConversion());
         StartCoroutine(ResenterConversion());
-    }
-
-    void Update()
-    {
-        //may move to relavent functions once made
-        //SetResenterBar();
     }
 
     public int GetPopulationFollowers()
@@ -120,6 +118,14 @@ public class MeepleManager : MonoBehaviour
             meepleObject.changeMeepleType();
         meepleList.Add(meepleObject);
     }
+
+    public bool CheckAllResenters()
+    {
+        if (populationResenters >= population || populationFollowers == 0)
+            return true;
+        return false;
+    }
+
     public IEnumerator FollowerConversion()
     {
         float start = Time.time;
@@ -167,6 +173,12 @@ public class MeepleManager : MonoBehaviour
                         m.changeMeepleType();
                         break;
                     }
+                }
+                if (CheckAllResenters())
+                {
+                    countdownManager.StopAllCoroutines();
+                    apocalypseSequence.LosingSequence();
+                    yield return null;
                 }
                 start = Time.time;
             }

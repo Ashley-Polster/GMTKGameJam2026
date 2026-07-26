@@ -296,8 +296,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a78a60b3755cc9a4781ce0625335bca9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ApocalypseSequence
+  musicOG: {fileID: 0}
+  musicApocalypse: {fileID: 0}
+  losingMessage: {fileID: 0}
   shop: {fileID: 0}
   pointBreakdown: {fileID: 0}
+  pointExit: {fileID: 0}
+  pointsFinal: {fileID: 0}
   menuButtons: {fileID: 0}
   backgroundApocalypse: {fileID: 0}
   fireballPrefab: {fileID: 6700885251092073022, guid: 5bac9dfda3c33d54d80127d21525dcc2, type: 3}

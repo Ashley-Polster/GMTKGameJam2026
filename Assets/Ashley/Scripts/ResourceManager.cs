@@ -22,7 +22,7 @@ public class ResourceManager : MonoBehaviour
 
     void Start()
     {
-        meepleManager = gameObject.GetComponent<MeepleManager>();
+        meepleManager = GetComponent<MeepleManager>();
         UpdateResourceTextUI();
         StartCoroutine(ResourceProduction());
     }

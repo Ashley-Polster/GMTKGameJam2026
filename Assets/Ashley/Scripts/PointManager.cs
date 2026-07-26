@@ -14,8 +14,8 @@ public class PointManager : MonoBehaviour
 
     void Start()
     {
-        meepleMangager = gameObject.GetComponent<MeepleManager>();
-        upgradesMangager = gameObject.GetComponent<UpgradesManager>();
+        meepleMangager = GetComponent<MeepleManager>();
+        upgradesMangager = GetComponent<UpgradesManager>();
 
         string followerString = followerText.text;
         followerString = followerString.Replace("[pointsPerFollower]", pointsPerFollower.ToString());

@@ -11,34 +11,52 @@ public class ApocalypseSequence : MonoBehaviour
     [SerializeField] GameObject musicOG;
     [SerializeField] GameObject musicApocalypse;
     [Header("Other apocalypse toggles")]
-    [SerializeField] GameObject shop;
-    [SerializeField] GameObject pointBreakdown, pointExit, pointsFinal, menuButtons, backgroundApocalypse, fireballPrefab;
+    [SerializeField] GameObject losingMessage;
+    [SerializeField] GameObject shop, pointBreakdown, pointExit, pointsFinal, menuButtons, backgroundApocalypse, fireballPrefab;
     [SerializeField] Transform leftFireballBound, rightFireballBound;
     private MeepleManager meepleManager;
     private ResourceManager resourceManager;
+    CountdownManager countdownManager;
     private PointManager pointManager;
 
     private void Start()
     {
         meepleManager = GetComponent<MeepleManager>();
         resourceManager = GetComponent<ResourceManager>();
+        countdownManager = GetComponent<CountdownManager>();
         pointManager = GetComponent<PointManager>();
     }
 
-    public void ApocalypseTime()
+    public void ClearBusyCoroutinesAndScreen()
     {
         //stop meeple conversion
         meepleManager.StopAllCoroutines();
         //stop resource production
         resourceManager.StopAllCoroutines();
-        
-        //switch music
-        musicOG.SetActive(false);
-        musicApocalypse.SetActive(true);
+
         //turn off extra info
         shop.SetActive(false);
         pointBreakdown.SetActive(false);
         pointExit.SetActive(false);
+
+    }
+    public void LosingSequence()
+    {
+        Debug.Log("Losing");
+        ClearBusyCoroutinesAndScreen();
+        //turn on menu buttons
+        menuButtons.SetActive(true);
+        //turn on losing message
+        losingMessage.SetActive(true);
+    }
+    public void ApocalypseTime()
+    {
+        Debug.Log("Winning");
+        ClearBusyCoroutinesAndScreen();
+        
+        //switch music
+        musicOG.SetActive(false);
+        musicApocalypse.SetActive(true);
 
         //update point value and turn on object
         TMP_Text pointsFinalTMP = pointsFinal.GetComponentInChildren<TMP_Text>();

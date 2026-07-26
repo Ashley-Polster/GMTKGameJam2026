@@ -49,7 +49,11 @@ public class CountdownManager : MonoBehaviour
             yield return new WaitForSeconds(1);
         }
         //time is up! Do apocalypse stuff here
-        apocalypseSequence.ApocalypseTime();
+        if (Time.time >= endTime)
+            apocalypseSequence.ApocalypseTime();
+        //mission failed
+        else
+            apocalypseSequence.LosingSequence();
     }
 
 }

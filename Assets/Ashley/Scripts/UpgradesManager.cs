@@ -50,10 +50,10 @@ public class UpgradesManager : MonoBehaviour
 
     void Start()
     {
-        meepleManager = gameObject.GetComponent<MeepleManager>();
-        resourceManager = gameObject.GetComponent<ResourceManager>();
-        pointManager = gameObject.GetComponent<PointManager>();
-        soundManager = gameObject.GetComponent<SoundManager>();
+        meepleManager = GetComponent<MeepleManager>();
+        resourceManager = GetComponent<ResourceManager>();
+        pointManager = GetComponent<PointManager>();
+        soundManager = GetComponent<SoundManager>();
         UpdatePrice(followerPriceTMP, followerNumPurchased, followerCostBase, followerCostMultiplier);
         UpdatePrice(priestPriceTMP, priestNum, priestCostBase, priestCostMultiplier);
         UpdatePrice(farmPriceTMP, farmNum, farmCostBase, farmCostMultiplier);

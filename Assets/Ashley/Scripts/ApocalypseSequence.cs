@@ -16,15 +16,19 @@ public class ApocalypseSequence : MonoBehaviour
     [SerializeField] Transform leftFireballBound, rightFireballBound;
     private MeepleManager meepleManager;
     private ResourceManager resourceManager;
-    CountdownManager countdownManager;
+    private UpgradesManager upgradesManager;
+    private CountdownManager countdownManager;
     private PointManager pointManager;
+    private RuinsTracker ruinsTracker;
 
     private void Start()
     {
         meepleManager = GetComponent<MeepleManager>();
         resourceManager = GetComponent<ResourceManager>();
+        upgradesManager = GetComponent<UpgradesManager>();
         countdownManager = GetComponent<CountdownManager>();
         pointManager = GetComponent<PointManager>();
+        ruinsTracker = RuinsTracker.instance;
     }
 
     public void ClearBusyCoroutinesAndScreen()
@@ -42,7 +46,6 @@ public class ApocalypseSequence : MonoBehaviour
     }
     public void LosingSequence()
     {
-        Debug.Log("Losing");
         ClearBusyCoroutinesAndScreen();
         //turn on menu buttons
         menuButtons.SetActive(true);
@@ -51,7 +54,9 @@ public class ApocalypseSequence : MonoBehaviour
     }
     public void ApocalypseTime()
     {
-        Debug.Log("Winning");
+        //save ruin info
+        ruinsTracker.RecordRuins(upgradesManager.GetFarmNum(), upgradesManager.GetChurchNum(), upgradesManager.GetStatueNum());
+
         ClearBusyCoroutinesAndScreen();
         
         //switch music

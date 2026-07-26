@@ -104,6 +104,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 515975f3774479942959b2be9223a8c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UpgradesManager
+  discountPercent: 0.3
+  discountColor: {r: 1, g: 0.50980395, b: 0.454902, a: 1}
   followerPriceTMP: {fileID: 0}
   followerNumPurchased: 0
   followerCostBase: 10
@@ -117,6 +119,8 @@ MonoBehaviour:
   farmPriceTMP: {fileID: 0}
   farmPrefab: {fileID: 2208770471805940200, guid: 8c87d6b05c61e4745b18e025b34b34be, type: 3}
   farmNum: 0
+  farmDiscountsAvailable: 0
+  farmDiscountsLeft: 0
   farmCostBase: 50
   farmCostMultiplier: 1.3
   resourceIncreasePerFarmBase: 5
@@ -124,6 +128,8 @@ MonoBehaviour:
   churchPriceTMP: {fileID: 0}
   churchPrefab: {fileID: 7434271365362449979, guid: cfb66dc8374b33848b89f1ce5abfb571, type: 3}
   churchNum: 0
+  churchDiscountsAvailable: 0
+  churchDiscountsLeft: 0
   churchCostBase: 100
   churchCostMultiplier: 1.5
   followerIncreasePerChurchBase: 5
@@ -131,6 +137,8 @@ MonoBehaviour:
   statuePriceTMP: {fileID: 0}
   statuePrefab: {fileID: 2960862865927328223, guid: 3990e551ef50e4e4ba86d8c05cbe60e7, type: 3}
   statueNum: 0
+  statueDiscountsAvailable: 0
+  statueDiscountsLeft: 0
   statueCostBase: 200
   statueCostMultiplier: 10
   followerIncreasePerStatueBase: 30

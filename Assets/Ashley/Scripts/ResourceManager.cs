@@ -2,6 +2,7 @@ using System.Collections;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 public class ResourceManager : MonoBehaviour
@@ -82,6 +83,8 @@ public class ResourceManager : MonoBehaviour
     private void SetEndTime()
     {
         endTime = startTime + timeForResourceProduction - timeForResourceProductionDecreaseFromStatues;
+        if (endTime < startTime + .5f)
+            endTime = startTime + .5f;
     }
 
     public IEnumerator ResourceProduction()

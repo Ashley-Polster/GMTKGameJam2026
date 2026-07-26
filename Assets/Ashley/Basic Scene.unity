@@ -119,6 +119,37 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &88170521
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 88170522}
+  m_Layer: 0
+  m_Name: Top Left Bounds
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &88170522
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 88170521}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -8.405, y: -1.04847, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1945890417}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &102424812 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3529690596826700525, guid: 4cb52229f4e40574b9f30471180f3276, type: 3}
@@ -373,7 +404,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 00000000718ac303
+  m_ApplyToSortingLayers: 00000000718ac303eb8c04e9
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -922,6 +953,37 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 9180811200198113478, guid: b1a5d504ad310784290d1891f66a1c9f, type: 3}
   m_PrefabInstance: {fileID: 6890782733121799816}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1056194132
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1056194133}
+  m_Layer: 0
+  m_Name: Bottom Right Bounds
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1056194133
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1056194132}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 9.371, y: -3.9384701, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1945890417}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1115180832
 GameObject:
   m_ObjectHideFlags: 0
@@ -1032,7 +1094,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 63146609
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 3810559315073561765, guid: d70ff0321ba7ee54e9f1a88ffba4562c, type: 3}
@@ -1425,6 +1487,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!1 &1945890416
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1945890417}
+  m_Layer: 0
+  m_Name: Building Bounds
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1945890417
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1945890416}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.48391, y: 0.25847, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 88170522}
+  - {fileID: 1056194133}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1966059847
 GameObject:
   m_ObjectHideFlags: 0
@@ -1605,9 +1700,29 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 974212990}
     - target: {fileID: 7110997135661731727, guid: cd4daf380f47feb468526344e6b17d45, type: 3}
+      propertyPath: farmPrefab
+      value: 
+      objectReference: {fileID: 2208770471805940200, guid: 8c87d6b05c61e4745b18e025b34b34be, type: 3}
+    - target: {fileID: 7110997135661731727, guid: cd4daf380f47feb468526344e6b17d45, type: 3}
+      propertyPath: satuePrefab
+      value: 
+      objectReference: {fileID: 2960862865927328223, guid: 3990e551ef50e4e4ba86d8c05cbe60e7, type: 3}
+    - target: {fileID: 7110997135661731727, guid: cd4daf380f47feb468526344e6b17d45, type: 3}
+      propertyPath: churchPrefab
+      value: 
+      objectReference: {fileID: 7434271365362449979, guid: cfb66dc8374b33848b89f1ce5abfb571, type: 3}
+    - target: {fileID: 7110997135661731727, guid: cd4daf380f47feb468526344e6b17d45, type: 3}
       propertyPath: farmPriceTMP
       value: 
       objectReference: {fileID: 147357307}
+    - target: {fileID: 7110997135661731727, guid: cd4daf380f47feb468526344e6b17d45, type: 3}
+      propertyPath: statuePrefab
+      value: 
+      objectReference: {fileID: 2960862865927328223, guid: 3990e551ef50e4e4ba86d8c05cbe60e7, type: 3}
+    - target: {fileID: 7110997135661731727, guid: cd4daf380f47feb468526344e6b17d45, type: 3}
+      propertyPath: topLeftBound
+      value: 
+      objectReference: {fileID: 88170522}
     - target: {fileID: 7110997135661731727, guid: cd4daf380f47feb468526344e6b17d45, type: 3}
       propertyPath: churchPriceTMP
       value: 
@@ -1620,6 +1735,10 @@ PrefabInstance:
       propertyPath: statuePriceTMP
       value: 
       objectReference: {fileID: 1507373943}
+    - target: {fileID: 7110997135661731727, guid: cd4daf380f47feb468526344e6b17d45, type: 3}
+      propertyPath: bottomRightBound
+      value: 
+      objectReference: {fileID: 1056194133}
     - target: {fileID: 7110997135661731727, guid: cd4daf380f47feb468526344e6b17d45, type: 3}
       propertyPath: followerPriceTMP
       value: 
@@ -2103,3 +2222,4 @@ SceneRoots:
   - {fileID: 1421680161}
   - {fileID: 784527003}
   - {fileID: 974212990}
+  - {fileID: 1945890417}

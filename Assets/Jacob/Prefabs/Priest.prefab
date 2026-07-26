@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3328744701366320360}
   - component: {fileID: 1763128803092902388}
   m_Layer: 6
-  m_Name: Meeple
+  m_Name: Priest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -7683434278201788734, guid: c39839c08eb7c4d49a0ecaf44cb49701, type: 3}
+  m_Sprite: {fileID: -8257175217006726390, guid: c39839c08eb7c4d49a0ecaf44cb49701, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -106,7 +106,7 @@ Animator:
   m_GameObject: {fileID: 4475453418849453882}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: afe441371b23c444ba0b207075fb7efa, type: 2}
+  m_Controller: {fileID: 9100000, guid: ae2e691121f1a894689dfca280498d14, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

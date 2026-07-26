@@ -10,6 +10,7 @@ public class ApocalypseSequence : MonoBehaviour
     [Header("Music")]
     [SerializeField] GameObject musicOG;
     [SerializeField] GameObject musicApocalypse;
+    [SerializeField] AudioClip volcanoErruption;
     [Header("Other apocalypse toggles")]
     [SerializeField] GameObject losingMessage;
     [SerializeField] GameObject shop, pointBreakdown, pointExit, pointsFinal, menuButtons, backgroundApocalypse, fireballPrefab;
@@ -20,6 +21,7 @@ public class ApocalypseSequence : MonoBehaviour
     private CountdownManager countdownManager;
     private PointManager pointManager;
     private RuinsTracker ruinsTracker;
+    AudioSource audioSource;
 
     private void Start()
     {
@@ -28,6 +30,7 @@ public class ApocalypseSequence : MonoBehaviour
         upgradesManager = GetComponent<UpgradesManager>();
         countdownManager = GetComponent<CountdownManager>();
         pointManager = GetComponent<PointManager>();
+        audioSource = GetComponent<AudioSource>();
         ruinsTracker = RuinsTracker.instance;
     }
 
@@ -83,6 +86,7 @@ public class ApocalypseSequence : MonoBehaviour
         StartCoroutine(SpawnFireballsOverTime());
         //change background
         StartCoroutine(FadeBackground(backgroundApocalypse.GetComponent<SpriteRenderer>()));
+        audioSource.PlayOneShot(volcanoErruption);
     }
 
     public void SpawnFireballInBounds(float y)

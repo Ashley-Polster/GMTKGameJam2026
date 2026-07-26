@@ -1601,21 +1601,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7916439569928756198}
     - target: {fileID: 6299905288008410173, guid: cd4daf380f47feb468526344e6b17d45, type: 3}
-      propertyPath: meeplePrefab
-      value: 
-      objectReference: {fileID: 4475453418849453882, guid: 14a78d51dea0f0f49818507af0a54af4, type: 3}
-    - target: {fileID: 6299905288008410173, guid: cd4daf380f47feb468526344e6b17d45, type: 3}
-      propertyPath: priestPrefab
-      value: 
-      objectReference: {fileID: 4475453418849453882, guid: daebf409e1968524ab20ad15cc107a8c, type: 3}
-    - target: {fileID: 6299905288008410173, guid: cd4daf380f47feb468526344e6b17d45, type: 3}
       propertyPath: meepleSpawnPoint
       value: 
       objectReference: {fileID: 974212990}
-    - target: {fileID: 6299905288008410173, guid: cd4daf380f47feb468526344e6b17d45, type: 3}
-      propertyPath: timeForResenterConversion
-      value: 50
-      objectReference: {fileID: 0}
     - target: {fileID: 7110997135661731727, guid: cd4daf380f47feb468526344e6b17d45, type: 3}
       propertyPath: farmPriceTMP
       value: 

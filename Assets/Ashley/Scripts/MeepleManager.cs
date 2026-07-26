@@ -31,6 +31,14 @@ public class MeepleManager : MonoBehaviour
         population = startingPopulation;
         populationFollowers = startingFollowers;
         populationResenters = startingPopulation - startingFollowers;
+        for (int i = 0; i < startingPopulation; i++)
+        {
+            if (i < startingFollowers)
+                SpawnMeeple();
+            //spawn resenters
+            else
+                SpawnMeeple(true);
+        }
         SetResenterBar();
         StartCoroutine(FollowerConversion());
         StartCoroutine(ResenterConversion());
@@ -61,8 +69,10 @@ public class MeepleManager : MonoBehaviour
         population = populationFollowers + populationResenters;
         SetResenterBar();
         pointManager.UpdatePointInfo();
-        GameObject newMeeple = Instantiate(meeplePrefab, meepleSpawnPoint.position, Quaternion.identity);
-        meepleList.Add(newMeeple.GetComponent<MeepleScript>());
+        for(int i = 0; i < num; i++)
+        {
+            SpawnMeeple();
+        }
     }
     public void AddResenters(bool decreaseFollower = true, int num = 1)
     {
@@ -98,6 +108,14 @@ public class MeepleManager : MonoBehaviour
         Instantiate(priestPrefab, meepleSpawnPoint.position, Quaternion.identity);
     }
 
+    public void SpawnMeeple(bool isResenter = false)
+    {
+        GameObject newMeeple = Instantiate(meeplePrefab, meepleSpawnPoint.position, Quaternion.identity);
+        MeepleScript meepleObject = newMeeple.GetComponent<MeepleScript>();
+        if (isResenter)
+            meepleObject.changeMeepleType();
+        meepleList.Add(meepleObject);
+    }
     public IEnumerator FollowerConversion()
     {
         float start = Time.time;

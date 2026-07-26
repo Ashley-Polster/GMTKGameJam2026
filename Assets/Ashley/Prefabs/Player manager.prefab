@@ -62,8 +62,8 @@ MonoBehaviour:
   resenterMajorityHandle: {fileID: 5554984007185707011, guid: ad72e7addc5608b4bb1cf43b20bcf54f, type: 3}
   resenterBarMaxWidth: 2400
   resenterBarHeight: 40
-  timeForFollowerConversion: 80
-  timeForResenterConversion: 50
+  timeForFollowerConversion: 40
+  timeForResenterConversion: 20
   timeForFollowerConversionDecreaseFromPriests: 0
   meepleList: []
   meeplePrefab: {fileID: 4475453418849453882, guid: 14a78d51dea0f0f49818507af0a54af4, type: 3}
@@ -86,7 +86,7 @@ MonoBehaviour:
   resourceIncrementFromFarms: 0
   resourceIncrementPerFollower: 1
   resourceIncrementPerFollowerFromStatues: 0
-  timeForResourceProduction: 10
+  timeForResourceProduction: 5
   timeForResourceProductionDecreaseFromStatues: 0
   resourceBar: {fileID: 0}
   resourceBarMaxWidth: 165
@@ -108,20 +108,20 @@ MonoBehaviour:
   discountColor: {r: 1, g: 0.50980395, b: 0.454902, a: 1}
   followerPriceTMP: {fileID: 0}
   followerNumPurchased: 0
-  followerCostBase: 10
+  followerCostBase: 5
   followerCostMultiplier: 1.1
   priestPriceTMP: {fileID: 0}
   priestNum: 0
-  priestCostBase: 20
+  priestCostBase: 10
   priestCostMultiplier: 1.15
   followerIntervalDecreasePerPriestBase: 1
-  followerIntervalDecreasePerPriestMultiplier: 1.1
+  followerIntervalDecreasePerPriestMultiplier: 1.2
   farmPriceTMP: {fileID: 0}
   farmPrefab: {fileID: 2208770471805940200, guid: 8c87d6b05c61e4745b18e025b34b34be, type: 3}
   farmNum: 0
   farmDiscountsAvailable: 0
   farmDiscountsLeft: 0
-  farmCostBase: 50
+  farmCostBase: 20
   farmCostMultiplier: 1.3
   resourceIncreasePerFarmBase: 5
   resourceIncreasePerFarmMultiplier: 1.1
@@ -139,7 +139,7 @@ MonoBehaviour:
   statueNum: 0
   statueDiscountsAvailable: 0
   statueDiscountsLeft: 0
-  statueCostBase: 200
+  statueCostBase: 300
   statueCostMultiplier: 10
   followerIncreasePerStatueBase: 30
   followerIncreasePerStatueMultiplier: 1.1
@@ -162,7 +162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CountdownManager
   timerText: {fileID: 0}
-  countdownDurationInSeconds: 600
+  countdownDurationInSeconds: 300
 --- !u!114 &819966487195762120
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -132,7 +132,9 @@ public class MeepleManager : MonoBehaviour
         while (true)
         {
             float endTime = start + timeForFollowerConversion - timeForFollowerConversionDecreaseFromPriests;
-            if (Time.time >= endTime)
+            if (endTime < start)
+                endTime = start + .5f;
+            if (Time.time >= endTime && populationResenters > 0)
             {
                 Debug.Log("Converting to follower");
                 AddFollowers();

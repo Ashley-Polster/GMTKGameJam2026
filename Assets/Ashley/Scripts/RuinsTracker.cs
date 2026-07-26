@@ -11,6 +11,9 @@ public class RuinsTracker : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
+            farmRuins = 0;
+            churchRuins = 0;
+            statueRuins = 0;
         }
         else
             Destroy(gameObject);

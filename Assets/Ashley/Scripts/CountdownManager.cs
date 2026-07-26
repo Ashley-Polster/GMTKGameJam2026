@@ -9,8 +9,11 @@ public class CountdownManager : MonoBehaviour
     [SerializeField] TMP_Text timerText;
     [SerializeField] float countdownDurationInSeconds;
     private float startTime, endTime;
+    private ApocalypseSequence apocalypseSequence;
+
     void Start()
     {
+        apocalypseSequence = GetComponent<ApocalypseSequence>();
         startTime = Time.time;
         endTime = startTime + countdownDurationInSeconds;
         StartCoroutine(UpdateTimerTextOnInterval());
@@ -37,6 +40,7 @@ public class CountdownManager : MonoBehaviour
         timerText.text = timerString;
     }
 
+
     public IEnumerator UpdateTimerTextOnInterval()
     {
         while (Time.time < endTime)
@@ -45,6 +49,7 @@ public class CountdownManager : MonoBehaviour
             yield return new WaitForSeconds(1);
         }
         //time is up! Do apocalypse stuff here
+        apocalypseSequence.ApocalypseTime();
     }
 
 }

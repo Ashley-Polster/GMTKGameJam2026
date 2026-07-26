@@ -16,12 +16,13 @@ GameObject:
   - component: {fileID: 819966487195762120}
   - component: {fileID: 5422730440932466401}
   - component: {fileID: 9115574147112530416}
+  - component: {fileID: 7117345781429644904}
   m_Layer: 0
   m_Name: Player manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &6181602578144967079
 Transform:
@@ -114,18 +115,21 @@ MonoBehaviour:
   followerIntervalDecreasePerPriestBase: 1
   followerIntervalDecreasePerPriestMultiplier: 1.1
   farmPriceTMP: {fileID: 0}
+  farmPrefab: {fileID: 2208770471805940200, guid: 8c87d6b05c61e4745b18e025b34b34be, type: 3}
   farmNum: 0
   farmCostBase: 50
   farmCostMultiplier: 1.3
   resourceIncreasePerFarmBase: 5
   resourceIncreasePerFarmMultiplier: 1.1
   churchPriceTMP: {fileID: 0}
+  churchPrefab: {fileID: 7434271365362449979, guid: cfb66dc8374b33848b89f1ce5abfb571, type: 3}
   churchNum: 0
   churchCostBase: 100
   churchCostMultiplier: 1.5
   followerIncreasePerChurchBase: 5
   followerIncreasePerChurchMultiplier: 1.1
   statuePriceTMP: {fileID: 0}
+  statuePrefab: {fileID: 2960862865927328223, guid: 3990e551ef50e4e4ba86d8c05cbe60e7, type: 3}
   statueNum: 0
   statueCostBase: 200
   statueCostMultiplier: 10
@@ -135,6 +139,8 @@ MonoBehaviour:
   resourceIncrementPerFollowerMultiplier: 2
   timeForResourceProductionDecreaseBase: 0.5
   timeForResourceProductionDecreaseMultiplier: 1.1
+  topLeftBound: {fileID: 0}
+  bottomRightBound: {fileID: 0}
 --- !u!114 &5586296284938092755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -278,3 +284,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SoundManager
   clip: {fileID: 8300000, guid: c9a35fbfdb783f346b1e732cd38a5312, type: 3}
+--- !u!114 &7117345781429644904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 948517812272909343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a78a60b3755cc9a4781ce0625335bca9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ApocalypseSequence
+  shop: {fileID: 0}
+  pointBreakdown: {fileID: 0}
+  menuButtons: {fileID: 0}
+  backgroundApocalypse: {fileID: 0}
+  fireballPrefab: {fileID: 6700885251092073022, guid: 5bac9dfda3c33d54d80127d21525dcc2, type: 3}
+  leftFireballBound: {fileID: 0}
+  rightFireballBound: {fileID: 0}

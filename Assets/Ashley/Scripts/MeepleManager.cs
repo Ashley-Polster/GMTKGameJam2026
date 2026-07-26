@@ -58,6 +58,10 @@ public class MeepleManager : MonoBehaviour
     {
         return population;
     }
+    public List<MeepleScript> GetMeepleList()
+    {
+        return meepleList;
+    }
 
     public void AddFollowers(bool decreaseResenter = true, int num = 1)
     {

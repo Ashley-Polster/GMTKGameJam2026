@@ -32,6 +32,11 @@ public class PointManager : MonoBehaviour
         UpdatePointInfo();
     }
 
+    public int GetPoints()
+    {
+        return points;
+    }
+
     public void UpdatePoints()
     {
         int followerNum = meepleMangager.GetPopulationFollowers();

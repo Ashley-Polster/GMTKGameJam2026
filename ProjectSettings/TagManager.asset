@@ -47,6 +47,9 @@ TagManager:
   - name: Meeple
     uniqueID: 63146609
     locked: 0
+  - name: Fireball
+    uniqueID: 1349655299
+    locked: 0
   m_RenderingLayers:
   - Default
   m_MigratedRenderPipelines: []

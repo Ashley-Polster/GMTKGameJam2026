@@ -886,6 +886,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &974212989
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 974212990}
+  m_Layer: 0
+  m_Name: SpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &974212990
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 974212989}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -3.95, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &1011559792 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 9180811200198113478, guid: b1a5d504ad310784290d1891f66a1c9f, type: 3}
@@ -1222,7 +1253,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 5697505075227188546, guid: f9fbd6c9d9164c946b338350f58cafad, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1244,7 +1275,7 @@ Transform:
   m_GameObject: {fileID: 1353836407}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0016, y: 0.305, z: 0}
+  m_LocalPosition: {x: 0, y: 0.305, z: 0}
   m_LocalScale: {x: 6.980532, y: 6.534306, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1569,6 +1600,22 @@ PrefabInstance:
       propertyPath: resenterBar
       value: 
       objectReference: {fileID: 7916439569928756198}
+    - target: {fileID: 6299905288008410173, guid: cd4daf380f47feb468526344e6b17d45, type: 3}
+      propertyPath: meeplePrefab
+      value: 
+      objectReference: {fileID: 4475453418849453882, guid: 14a78d51dea0f0f49818507af0a54af4, type: 3}
+    - target: {fileID: 6299905288008410173, guid: cd4daf380f47feb468526344e6b17d45, type: 3}
+      propertyPath: priestPrefab
+      value: 
+      objectReference: {fileID: 4475453418849453882, guid: daebf409e1968524ab20ad15cc107a8c, type: 3}
+    - target: {fileID: 6299905288008410173, guid: cd4daf380f47feb468526344e6b17d45, type: 3}
+      propertyPath: meepleSpawnPoint
+      value: 
+      objectReference: {fileID: 974212990}
+    - target: {fileID: 6299905288008410173, guid: cd4daf380f47feb468526344e6b17d45, type: 3}
+      propertyPath: timeForResenterConversion
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 7110997135661731727, guid: cd4daf380f47feb468526344e6b17d45, type: 3}
       propertyPath: farmPriceTMP
       value: 
@@ -1723,6 +1770,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: TryPurchasePriest
       objectReference: {fileID: 0}
+    - target: {fileID: 483095362636716280, guid: 82f2a773e02c509409c2a28352eea2d7, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -8257175217006726390, guid: c39839c08eb7c4d49a0ecaf44cb49701, type: 3}
     - target: {fileID: 1269719750975519194, guid: 82f2a773e02c509409c2a28352eea2d7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -2063,3 +2114,4 @@ SceneRoots:
   - {fileID: 1353836409}
   - {fileID: 1421680161}
   - {fileID: 784527003}
+  - {fileID: 974212990}

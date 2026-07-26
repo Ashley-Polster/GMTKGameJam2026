@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
@@ -19,6 +20,10 @@ public class MeepleManager : MonoBehaviour
     [Header("Conversion rates")]
     [SerializeField] float timeForFollowerConversion, timeForResenterConversion, timeForFollowerConversionDecreaseFromPriests;
     private PointManager pointManager;
+    [SerializeField] List<MeepleScript> meepleList = new List<MeepleScript>();
+    [SerializeField] GameObject meeplePrefab;
+    [SerializeField] GameObject priestPrefab;
+    [SerializeField] Transform meepleSpawnPoint;
 
     void Awake()
     {
@@ -56,6 +61,8 @@ public class MeepleManager : MonoBehaviour
         population = populationFollowers + populationResenters;
         SetResenterBar();
         pointManager.UpdatePointInfo();
+        GameObject newMeeple = Instantiate(meeplePrefab, meepleSpawnPoint.position, Quaternion.identity);
+        meepleList.Add(newMeeple.GetComponent<MeepleScript>());
     }
     public void AddResenters(bool decreaseFollower = true, int num = 1)
     {
@@ -88,6 +95,7 @@ public class MeepleManager : MonoBehaviour
     public void AddTimeForFollowerConversionDecreaseFromPriests(float timeForFollowerConversionDecrease)
     {
         timeForFollowerConversionDecreaseFromPriests += timeForFollowerConversionDecrease;
+        Instantiate(priestPrefab, meepleSpawnPoint.position, Quaternion.identity);
     }
 
     public IEnumerator FollowerConversion()
@@ -100,6 +108,14 @@ public class MeepleManager : MonoBehaviour
             {
                 Debug.Log("Converting to follower");
                 AddFollowers();
+                foreach(MeepleScript m in meepleList)
+                {
+                    if (m.isResenter)
+                    {
+                        m.changeMeepleType();
+                        break;
+                    }
+                }
                 start = Time.time;
             }
             if (endTime - Time.time >= 1)
@@ -122,6 +138,14 @@ public class MeepleManager : MonoBehaviour
             {
                 Debug.Log("Converting to resenter");
                 AddResenters();
+                foreach(MeepleScript m in meepleList)
+                {
+                    if (!m.isResenter)
+                    {
+                        m.changeMeepleType();
+                        break;
+                    }
+                }
                 start = Time.time;
             }
             if (endTime - Time.time >= 1)

@@ -9,6 +9,8 @@ public class MeepleScript : MonoBehaviour
     Rigidbody2D rb;
     Vector2 velocity;
     bool coroutineIsDone;
+
+    public bool isResenter = false;
     void Awake()
     {
         animator = GetComponent<Animator>();
@@ -26,6 +28,25 @@ public class MeepleScript : MonoBehaviour
         {
             StartCoroutine(run());
         }
+    }
+
+    public void changeMeepleType()
+    {
+        if (isResenter)
+        {
+            isResenter = false;
+            animator.SetBool("isMad", false);
+        }
+        else
+        {
+            isResenter = true;
+            animator.SetBool("isMad", true);
+        }
+    }
+
+    public void apocalypseAnimation()
+    {
+        animator.SetBool("isScreaming", true);
     }
 
     IEnumerator run()
